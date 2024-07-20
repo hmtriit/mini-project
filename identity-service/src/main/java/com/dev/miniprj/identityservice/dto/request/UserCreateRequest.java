@@ -1,5 +1,6 @@
 package com.dev.miniprj.identityservice.dto.request;
 
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,9 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 public class UserCreateRequest {
+    @Size(min = 1, message = "USERNAME_INVALID")
     private String username;
+    @Size(min = 8, message = "INVALID_PASSWORD")
     private String password;
     private String firstname;
     private String lastname;
