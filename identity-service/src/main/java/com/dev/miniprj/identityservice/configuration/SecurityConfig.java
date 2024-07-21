@@ -50,6 +50,7 @@ public class SecurityConfig {
                         jwtConfigurer -> jwtConfigurer.decoder(jwtDecoder())
                                 .jwtAuthenticationConverter(jwtAuthenticationConverter())
                         )
+                        .authenticationEntryPoint(new JwtAuthenticationEntryPoint())
         );
 
         // disable csrf for endPoint PUBLIC_ENDPOINT
